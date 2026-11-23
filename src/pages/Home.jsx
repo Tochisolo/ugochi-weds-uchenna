@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
 import ScheduleList from "../components/ScheduleList";
-import { DATE_TEXT, PLACE, DEADLINE, HASHTAG, HERO, MESSAGE } from "../data/content";
+import HeroCarousel from "../components/HeroCarousel";
+import { DATE_TEXT, PLACE, DEADLINE, HASHTAG, MESSAGE } from "../data/content";
 import { body, btn, display } from "../lib/styles";
 
 export default function Home() {
@@ -10,12 +11,7 @@ export default function Home() {
       {/* Hero + countdown share one cream background */}
       <div className="bg-[#FBEFE4] pb-24">
         <section className="mx-auto flex max-w-3xl flex-col items-center px-5 pb-14 pt-32 text-center">
-          <div className="group w-full max-w-sm rounded-t-full border border-[#8a6d2f]/50 p-3">
-            <div className="overflow-hidden rounded-t-full">
-              <img src={HERO} alt="Ugochi & Uchenna photographed before their wedding"
-                   className="aspect-[3/4] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-            </div>
-          </div>
+          <HeroCarousel />
           <h1 className={`${display} mt-10 text-5xl italic leading-tight sm:text-6xl`}>Ugochi &amp; Uchenna</h1>
           <p className={`${body} mt-4 text-lg`}>{DATE_TEXT}</p>
           <p className={`${body} mt-1 text-lg`}>{PLACE}</p>

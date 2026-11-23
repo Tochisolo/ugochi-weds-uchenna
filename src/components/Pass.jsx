@@ -1,13 +1,28 @@
+import { useRef, useState } from "react";
+import { toPng } from "html-to-image";
 import { QRCodeSVG } from "qrcode.react";
 import { DATE_TEXT, PLACE, HASHTAG } from "../data/content";
 import { body, display, btn } from "../lib/styles";
 
 export default function Pass({ guest }) {
+  const cardRef = useRef(null);
+  const [saving, setSaving] = useState(false);
+
+  // Saves the pass card as an image. If that fails, fall back to the browser's print dialog.
+  const download = async () => {
+    setSaving(true);
+    try {
+      const url = await toPng(cardRef.current, { pixelRatio: 2, backgroundColor: "#FBEFE4", cacheBust: true });
+      Object.assign(document.createElement("a"), { href: url, download: `entry-pass-${guest.id}.png` }).click();
+    } catch { window.print(); }
+    finally { setSaving(false); }
+  };
+
   // This JSON is what the QR code holds. A door scanner can parse it.
   const payload = JSON.stringify({ id: guest.id, name: guest.name, seats: guest.seats, event: "UU2026" });
   return (
     <div className="mx-auto w-full max-w-3xl">
-      <div className="relative overflow-hidden rounded-3xl bg-white text-left text-[#121528] shadow-[0_30px_80px_-30px_rgba(18,21,43,0.35)] md:flex">
+      <div ref={cardRef} className="relative overflow-hidden rounded-3xl bg-white text-left text-[#4A4458] shadow-[0_30px_80px_-30px_rgba(18,21,43,0.35)] md:flex">
         <div className="flex-1 border-b border-dashed border-[#121528]/25 p-8 md:border-b-0 md:border-r">
           <p className={`${display} text-3xl italic`}>Ugochi &amp; Uchenna</p>
           <p className={`${body} mt-1 text-sm opacity-70`}>{DATE_TEXT} · {PLACE}</p>
@@ -30,8 +45,9 @@ export default function Pass({ guest }) {
         <span className="absolute -top-3 left-[calc(100%-16rem-12px)] hidden h-6 w-6 rounded-full bg-[#FBEFE4] md:block" />
         <span className="absolute -bottom-3 left-[calc(100%-16rem-12px)] hidden h-6 w-6 rounded-full bg-[#FBEFE4] md:block" />
       </div>
-      <div className="mt-6 flex justify-center print:hidden">
-        <button onClick={() => window.print()} className={`${btn} ${body}`}>Save or print pass</button>
+      <div className={`${body} mt-6 flex flex-col items-center gap-3 print:hidden`}>
+        <button onClick={download} disabled={saving} className={`${btn} disabled:opacity-60`}>{saving ? "Preparing..." : "Download pass"}</button>
+        <button onClick={() => window.print()} className="text-sm underline underline-offset-4">Print instead</button>
       </div>
     </div>
   );

@@ -1,0 +1,16 @@
+{
+  "name": "wedding-invite-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3",
+    "mongoose": "^8.24.10",
+    "resend": "^6.39.0"
+  }
+}

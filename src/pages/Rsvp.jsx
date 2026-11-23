@@ -17,7 +17,7 @@ export default function Rsvp() {
     return (
       <section className="px-5 pb-20 pt-32 text-center">
         <h1 className={`${display} text-5xl`}>See you in Owerri, {first}.</h1>
-        <p className={`${body} mb-12 mt-3 text-[#4A4458]/70`}>Your pass is ready. Keep it on your phone or print it.</p>
+        <p className={`${body} mx-auto mb-12 mt-3 max-w-md text-[#4A4458]/70`}>Your pass is ready. Download it and keep it on your phone.</p>
         <Pass guest={result.guest} />
         <FindPass onFound={show} />
       </section>
