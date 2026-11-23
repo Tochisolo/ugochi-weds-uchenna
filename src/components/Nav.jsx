@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { DEADLINE } from "../data/content";
 import { body, display } from "../lib/styles";
 
-const links = [["/", "Home"], ["/rsvp", "RSVP"], ["/schedule", "Schedule"], ["/gallery", "Gallery"]];
+const links = [["/", "Home"], ["/rsvp", "RSVP"], ["/gallery", "Gallery"], ["/schedule", "Schedule"]];
 
 // The whole header is fixed and solid: a navy bar on top, then a cream nav bar beneath it.
 export default function Nav() {

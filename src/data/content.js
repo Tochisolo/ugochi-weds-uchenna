@@ -1,7 +1,7 @@
 // All wording lives here, exactly as on the original invitation.
 export const DATE_TEXT = "Saturday, 26th December 2026";
 export const PLACE = "Owerri, Imo";
-export const DEADLINE = "November 5, 2026";
+export const DEADLINE = "December 20, 2026";
 export const HASHTAG = "#Ugochi&Uchenna2026";
 export const EVENT_TIME = new Date("2026-12-26T12:00:00+01:00"); // Lagos time (WAT)
 // Download this image into /public and point to "/hero.jpg" so it can't disappear.
@@ -16,7 +16,7 @@ export const SCHEDULE = [
 // Photoshoot carousel: put 5-6 images in /public/photos/ and list them here.
 // Any that fail to load are skipped automatically.
 export const PHOTOS = ["/photos/1.jpeg", "/photos/2.jpeg", "/photos/3.jpeg", "/photos/4.jpeg", "/photos/5.jpeg", "/photos/6.jpeg"];
-export const SLIDE_MS = 6000; // how long each photo stays on screen
+export const SLIDE_MS = 2000; // how long each photo stays on screen
 
 export const GALLERY_INTRO =
   "Every picture here holds a small piece of our story: the laughter, the quiet looks, the nervous excitement, and the joy of finding home in each other. We are so grateful to have you walking this journey with us, and we hope these moments make you smile as much as they make us smile. Take your time, and enjoy a little glimpse of our love.";
