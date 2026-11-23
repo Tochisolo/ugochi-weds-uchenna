@@ -12,10 +12,14 @@ export default function Footer() {
 
       <p className="text-xs text-[#E6E1DA]/60">© {new Date().getFullYear()} {COPYRIGHT_NAME}. All rights reserved.</p>
       <p className="mt-3 text-sm">
-        <a href={whatsappLink(CONTACT_NUMBER, CONTACT_MESSAGE)} target="_blank" rel="noopener noreferrer"
-          aria-label={`Chat with us on WhatsApp at ${CONTACT_NUMBER}`}
-          className="underline-offset-4 transition hover:text-[#E6E1DA] hover:underline">
-          Contact us @ {CONTACT_NUMBER}
+        <a
+          href={whatsappLink(CONTACT_NUMBER, CONTACT_MESSAGE)}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contact us on WhatsApp"
+          className="underline-offset-4 transition hover:text-[#E6E1DA] hover:underline"
+        >
+          Contact Us
         </a>
       </p>
     </footer>
