@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import Lightbox from "../components/LightBox";
+import Lightbox from "../components/Lightbox";
 import Pagination from "../components/Pagination";
 import { GALLERY_INTRO } from "../data/content";
 import { GALLERY_PHOTOS, PAGE_SIZE, thumbOf } from "../data/gallery";
