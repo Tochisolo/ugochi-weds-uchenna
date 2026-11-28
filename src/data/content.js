@@ -15,8 +15,8 @@ export const SCHEDULE = [
 
 // Photoshoot carousel: put 5-6 images in /public/photos/ and list them here.
 // Any that fail to load are skipped automatically.
-export const PHOTOS = ["/photos/1.jpeg", "/photos/2.jpeg", "/photos/3.jpeg", "/photos/4.jpeg", "/photos/5.jpeg", "/photos/6.jpeg"];
-export const SLIDE_MS = 2000; // how long each photo stays on screen
+export const PHOTOS = ["/photos/1.jpeg", "/photos/2.jpeg"];
+export const SLIDE_MS = 5000; // how long each photo stays on screen
 
 export const GALLERY_INTRO =
   "Every picture here holds a small piece of our story: the laughter, the quiet looks, the nervous excitement, and the joy of finding home in each other. We are so grateful to have you walking this journey with us, and we hope these moments make you smile as much as they make us smile. Take your time, and enjoy a little glimpse of our love.";
